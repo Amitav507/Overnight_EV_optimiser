@@ -1,6 +1,6 @@
 # EV Bus Depot Charging Optimiser
 
-A cost-minimising charging scheduler for an electric bus depot, built to show how much a depot could save by shifting from naive (uncontrolled) charging to price-aware scheduling — while still fully meeting fleet readiness requirements.
+A cost-minimising charging scheduler for an electric bus depot, built to show how much a depot could save by shifting from naive (uncontrolled) charging to price-aware scheduling — while still fully meeting fleet readiness requirements. 
 
 ## Background
 
@@ -38,6 +38,8 @@ This project asks: how much could a depot save by scheduling that same charging 
 
 The optimiser returns an optimised half-hourly charging schedule, exported in a format that drops straight into Excel — making it easy to chart the naive vs. optimised profiles side by side against the price curve.
 
+**The MIDP outturn on December 8th 2025 ( potential system stress event was indicated by NESO) is used to compare the cost of charging a fleet of roughly 50 electric buses on 60 kW DC depot chargers — a fairly typical mid-size urban depot, showing a savings of c. £300 in a single run.**
+
 ## Tech stack
 
 Python — pandas, numpy, cvxpy, matplotlib
@@ -45,4 +47,7 @@ Python — pandas, numpy, cvxpy, matplotlib
 ## Disclaimer
 
 This is a personal/portfolio project for demonstration purposes. It is not connected to, or endorsed by, any organisation involved in the original exercise that inspired it.
+
+MIDP data - https://bmrs.elexon.co.uk/market-index-prices
+Charging data is synthesized assuming a linear ramp as buses trickle in over the return wave, hitting a plateau at the 1500 kWh cap indicating the naive charging peak, and eventually tapering off overnight.
 
